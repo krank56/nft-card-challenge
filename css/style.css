@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  background-color: #0d192b;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden; }
+
+.card {
+  background-color: #14253d;
+  border-radius: 20px;
+  max-width: 375px;
+  max-height: 667px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); }
+  .card h3 {
+    transition: 0.3s; }
+    .card h3:hover {
+      cursor: pointer;
+      color: #00fff7; }
+  .card .card__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+    flex: 1;
+    position: relative; }
+    .card .card__image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      object-position: center; }
+    .card .card__image .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      padding: 42%;
+      border-radius: 15px;
+      opacity: 0;
+      transition: 0.3s;
+      background-color: none; }
+      .card .card__image .overlay:hover {
+        background-color: rgba(0, 255, 247, 0.1);
+        opacity: 1; }
+    .card .card__image:hover {
+      cursor: pointer; }
+  .card p.card__description {
+    font-size: 1.2rem;
+    color: #8bacda;
+    font-weight: 300; }
+  .card .card__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+    .card .card__info span {
+      display: flex;
+      gap: 10px;
+      flex-direction: row;
+      align-items: center; }
+      .card .card__info span.time-left {
+        color: #8bacda; }
+      .card .card__info span.value {
+        color: #00fff7; }
+  .card hr {
+    border: 1px solid #2f415b; }
+  .card .card__owner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #8bacda; }
+    .card .card__owner .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 1px white solid; }
+    .card .card__owner .card__owner__name {
+      color: white;
+      transition: 0.3s; }
+      .card .card__owner .card__owner__name:hover {
+        color: #00fff7;
+        cursor: pointer; }
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 2rem; } }

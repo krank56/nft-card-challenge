@@ -1,0 +1,143 @@
+// init scss
+@import "variables";
+@import "fonts";
+//reset css styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  background-color: $very-dark-blue-main-bg;
+  color: $white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+//main container
+.card {
+  background-color: $very-dark-blue-card-bg;
+  border-radius: 20px;
+  max-width: 375px;
+  max-height: 667px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  h3 {
+    transition: 0.3s;
+    &:hover {
+      cursor: pointer;
+      color: $cyan;
+    }
+  }
+
+  .card__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+    flex: 1;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      padding: 42%;
+      border-radius: 15px;
+      opacity: 0;
+      transition: 0.3s;
+      background-color: none;
+
+      &:hover {
+        background-color: rgba($cyan, 0.1);
+        opacity: 1;
+      }
+    }
+    &:hover {
+      //add overlay onhover
+
+      cursor: pointer;
+    }
+  }
+  p.card__description {
+    font-size: 1.2rem;
+    color: $primary;
+    font-weight: 300;
+  }
+
+  .card__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      display: flex;
+      gap: 10px;
+      flex-direction: row;
+      align-items: center;
+      &.time-left {
+        color: $primary;
+      }
+      &.value {
+        color: $cyan;
+      }
+    }
+  }
+
+  hr {
+    border: 1px solid $very-dark-blue-line;
+  }
+
+  .card__owner {
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 1px $white solid;
+    }
+    .card__owner__name {
+      color: $white;
+      transition: 0.3s;
+      &:hover {
+        color: $cyan;
+        cursor: pointer;
+      }
+    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $primary;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 2rem;
+  }
+}
